@@ -81,10 +81,4 @@ def run_interact_plot(tsne_filename, img_folder, activity_filename=None):
     interactive_plot(x, y, c, img_list)
 
 
-if __name__ == "__main__":
-    # generate_images('/home/shulgin/work/h23/c5ar/c5a_chembl.smi',
-    #                 '/home/shulgin/work/h23/c5ar/images',
-    #                 '/home/shulgin/work/h23/c5ar/c5a_ic50_chembl_df.df')
-    run_interact_plot('/home/shulgin/work/h23/c5ar/tsne_data.df', '/home/shulgin/work/h23/c5ar/images',
-                      activity_filename='/home/shulgin/work/h23/c5ar/c5a_ic50_chembl_df.df')
 
