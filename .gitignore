@@ -1,2 +1,5 @@
 .idea
 src/chemspace_vis/__pycache__
+dist
+src/chemspace_vis.egg-info/
+

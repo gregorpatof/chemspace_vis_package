@@ -28,7 +28,7 @@ def read_fingerprints(fn, smi_fn=None):
         for bits in fp:
             if len(bits) == 8:
                 fp_binary += [int(x) for x in bits]
-            else:
+            elif len(bits) > 0:
                 raise ValueError("Wrong format for .fp file (not packets of 8 bits separated by |)")
         bytes_list.append(np.packbits(np.array(fp_binary)))
     np_fps = np.zeros((len(bytes_list), 128), dtype=np.uint8)
