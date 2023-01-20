@@ -13,6 +13,8 @@ def interactive_plot(x, y, c, img_list, use_log10=True):
         c = np.log10(c)
     fig = plt.figure()
     ax = fig.add_subplot(111)
+    ax.set_xlabel("Embedding 1")
+    ax.set_ylabel("Embedding 2")
     line = plt.scatter(x, y, c=c, s=20, cmap="viridis")
     image = plt.imread(img_list[0])
     im = OffsetImage(image, zoom=0.5)

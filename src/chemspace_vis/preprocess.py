@@ -39,7 +39,7 @@ def make_tsne_from_fingerprints(fingerprints_fn, smi_fn=None, n_pca_components=1
     pcs = pca.fit_transform(fps)
     print("{:.1f}% of variance explained by the first {} PCs".format(np.sum(pca.explained_variance_ratio_)*100,
                                                                      n_pca_components))
-    mod = TSNE()
+    mod = TSNE(init='random', learning_rate='auto')
     mod.fit(pcs)
     print(len(mod.embedding_))
     with open(out_filename, "w") as f:
