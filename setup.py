@@ -8,7 +8,7 @@ with open(os.path.join(HERE, "README.md")) as f:
 
 setuptools.setup(
     name="chemspace_vis",
-    version="0.1.1",
+    version="1.0.0",
     author="Olivier Mailhot",
     description="Chemspace visualizer",
     long_description=README,
@@ -17,7 +17,7 @@ setuptools.setup(
     packages=setuptools.find_packages('src'),
     package_dir={'': 'src'},
 
-    install_requires=['rdkit', 'numpy', 'matplotlib', 'scikit-learn'],
+    install_requires=['rdkit', 'numpy>=1.20.0', 'matplotlib', 'scikit-learn>=1.2.0'],
     classifiers=[
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",

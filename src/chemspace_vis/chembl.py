@@ -70,7 +70,7 @@ class ChemblActivity:
                 else:
                     self.data_dict[tag].append(ll[self.tags[tag]])
                 if tag == 'Standard Type':
-                    if ll[self.tags[tag]] != self.activity:
+                    if self.activity is not None and ll[self.tags[tag]] != self.activity:
                         raise ValueError("Activity should be {}, but line {} is {}".format(self.activity, i,
                                                                                            ll[self.tags[tag]]))
 
