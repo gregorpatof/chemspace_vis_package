@@ -25,12 +25,16 @@ def generate_images(smi_fn, img_folder, activity_fn):
         os.mkdir(img_folder)
     with open(smi_fn) as f:
         lines = f.readlines()
-    with open(activity_fn) as f:
-        act_lines = f.readlines()[1:]
+    if activity_fn is not None:
+        with open(activity_fn) as f:
+            act_lines = f.readlines()[1:]
     for i, line in enumerate(lines):
         smiles, molid = line.strip().split()
-        activity = float(act_lines[i].split()[-1])
-        draw_mol_from_smiles(smiles, "{}/{}.png".format(img_folder, molid), molid + "  {:.2f}".format(activity))
+        if activity_fn is not None:
+            activity = float(act_lines[i].split()[-1])
+            draw_mol_from_smiles(smiles, "{}/{}.png".format(img_folder, molid), molid + "  {:.2f}".format(activity))
+        else:
+            draw_mol_from_smiles(smiles, "{}/{}.png".format(img_folder, molid), molid)
 
 
 def make_tsne_from_fingerprints(fingerprints_fn, smi_fn=None, n_pca_components=180, out_filename="tsne_data.df"):

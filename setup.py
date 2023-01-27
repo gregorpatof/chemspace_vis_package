@@ -8,7 +8,7 @@ with open(os.path.join(HERE, "README.md")) as f:
 
 setuptools.setup(
     name="chemspace_vis",
-    version="1.0.0",
+    version="1.1.0",
     author="Olivier Mailhot",
     description="Chemspace visualizer",
     long_description=README,
